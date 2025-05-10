@@ -1,0 +1,206 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+}
+
+html {
+  font-size: 13px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background-color: #f6f5f6;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  display: none;
+}
+
+.cards {
+  max-width: 1114px;
+  display: grid;
+  grid-template-columns: auto 255px;
+  gap: 32px;
+}
+
+.section__1 {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  row-gap: 24px;
+  column-gap: 32px;
+}
+
+.card {
+  padding: 32px;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.24);
+}
+
+.card_profile {
+  display: flex;
+  justify-content: start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.card_name {
+  margin-bottom: 4px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--white);
+}
+
+.card_role {
+  font-size: 11px;
+  line-height: 1.1;
+  color: var(--purple-50);
+}
+
+.card_image {
+  display: block;
+  height: 28px;
+  width: 28px;
+  border-radius: 100%;
+  align-self: center;
+}
+
+.card_heading {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+.card_text {
+  color: var(--purple-50);
+  line-height: 1.4;
+}
+
+.card-1 {
+  background-color: var(--purple-500);
+  grid-column: span 2;
+  color: var(--white);
+  width: 540px;
+}
+
+.card-1 .card_image {
+  outline: 2px solid #a775f1;
+}
+
+.card-2 {
+  background-color: var(--grey-500);
+  width: 255px;
+}
+
+.card-3 {
+  width: 255px;
+  background-color: var(--white);
+}
+
+.card-3 .card_name,
+.card-3 .card_heading {
+  color: var(--grey-500);
+}
+
+.card-3 .card_role,
+.card-3 .card_text {
+  color: var(--grey-400);
+}
+
+.card-4 {
+  grid-column: span 2;
+  background-color: var(--dark-blue);
+}
+
+.card-4 .card_image {
+  outline: 2px solid var(--purple-500);
+}
+
+.card-4 .card_heading {
+  color: var(--grey-200);
+}
+
+.card-4 .card_text {
+  color: var(--grey-100);
+}
+
+.card-5 {
+  background-color: white;
+}
+
+.card-5 .card_name,
+.card-5 .card_heading {
+  color: var(--grey-500);
+}
+
+.card-5 .card_role,
+.card-5 .card_text {
+  color: var(--grey-400);
+}
+
+@media (max-width: 1440px) {
+  html {
+    height: 1300px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 647px;
+  }
+
+  .section__1 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card-1 {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    height: 2000px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 305px;
+  }
+
+  .section__1 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+  }
+
+  .card-1 {
+    grid-column: span 1;
+  }
+
+  .card-4 {
+    grid-column: span 1;
+  }
+}
